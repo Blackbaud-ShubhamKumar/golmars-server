@@ -1,8 +1,7 @@
-package com.marse.martian.services;
+package com.marse.martian.services.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -39,8 +38,8 @@ import com.marse.martian.entities.Wallet;
 import com.marse.martian.exceptions.MartianDataException;
 import com.marse.martian.exceptions.MartianServiceException;
 import com.marse.martian.security.filters.SHA256PasswordEncoder;
+import com.marse.martian.services.MartianBaseService;
 import com.marse.martian.util.DateUtil;
-import com.marse.martian.util.SecurityContextHelper;
 
 @Service
 public class MartianBaseServiceImpl implements MartianBaseService {

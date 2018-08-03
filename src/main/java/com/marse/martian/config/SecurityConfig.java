@@ -48,10 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 				// .antMatchers(HttpMethod.GET, "/transactions/list").hasRole(AUTHORIZED_ROLE)
-		         .antMatchers(HttpMethod.POST, "/api/auth").permitAll()
-		         .antMatchers(HttpMethod.POST, "/api/wallet").permitAll()
-				 //.anyRequest().fullyAuthenticated()
-				.and().exceptionHandling()
+				.antMatchers(HttpMethod.POST, "/api/auth").permitAll().anyRequest().fullyAuthenticated().and()
+				.exceptionHandling()
 				.authenticationEntryPoint(new Http401AuthenticationEntry("'Bearer token_type=\"JWT\"'"));
 		http.addFilterBefore(statelessAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 	}
